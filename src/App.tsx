@@ -7,6 +7,7 @@ import Toggle from './components/Toggle'
 import useThemeDetector from './hooks/useThemeDetectors'
 import Profile from './Profile'
 import Projects from './Projects'
+import Work from './work/Work'
 
 const fonts: DefaultTheme['fonts'] = { primary: 'Courier New, Courier, monospace' }
 
@@ -48,6 +49,7 @@ const App = () => {
               <Toggle value={useDarkTheme} onChange={setDarkTheme} />
             </ToggleWrapper>
             <Profile />
+            <Work />
             <Projects />
           </VStack>
         </FadeIn>
