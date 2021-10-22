@@ -15,6 +15,13 @@ module.exports = {
       },
     ],
     'prettier/prettier': 'warn',
+    'react/jsx-key': [
+      'warn',
+      {
+        checkFragmentShorthand: true,
+        checkKeyMustBeforeSpread: true,
+      },
+    ],
     'react/jsx-sort-props': [
       'warn',
       { callbacksLast: true, ignoreCase: false, reservedFirst: false, shorthandFirst: true },
