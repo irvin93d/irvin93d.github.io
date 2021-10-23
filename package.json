@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "build": "BUILD_PATH=docs react-scripts build",
+    "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "yarn tsc && eslint . --ext .json,.js,.jsx,.ts,.tsx --max-warnings 0 && prettier --check src tsconfig.json",
     "lint-fix": "yarn tsc && eslint . --ext .json,.js,.jsx,.ts,.tsx --max-warnings 0 --fix; prettier --write src tsconfig.json",
