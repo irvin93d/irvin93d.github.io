@@ -7,7 +7,7 @@ import Projects from './Projects'
 const theme: DefaultTheme = {
   colors: {
     primary: '#118bff',
-    text: '#292b2c',
+   text: '#292b2c',
     emphasize: '#0275d8',
   },
   fonts: {
