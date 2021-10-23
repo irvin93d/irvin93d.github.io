@@ -7,7 +7,10 @@ declare module 'styled-components/macro' {
     colors: {
       emphasize: string
       primary: string
+      gray1: string
+      gray2: string
       text: string
+      background: string
     }
     fonts: {
       primary: string
