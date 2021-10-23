@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled, { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components/macro'
 
 import { HStack, VStack } from './components/Stack'
 import Toggle from './components/Toggle'
+import useThemeDetector from './hooks/useThemeDetectors'
 import Profile from './Profile'
 import Projects from './Projects'
 
@@ -29,7 +30,12 @@ const darkTheme: DefaultTheme = { colors: darkColors, fonts, gaps }
 const lightTheme: DefaultTheme = { colors: lightColors, fonts, gaps }
 
 const App = () => {
-  const [useDarkTheme, setDarkTheme] = useState(false)
+  const preferredTheme = useThemeDetector()
+  const [useDarkTheme, setDarkTheme] = useState(preferredTheme)
+  useEffect(() => {
+    setDarkTheme(preferredTheme)
+  }, [preferredTheme])
+
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
