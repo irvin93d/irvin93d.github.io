@@ -4,7 +4,6 @@ import {
   faInstagram,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
-import {} from '@fortawesome/free-regular-svg-icons'
 import { faEnvelope, faFile, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ComponentProps, PropsWithChildren } from 'react'
