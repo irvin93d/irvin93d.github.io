@@ -16,7 +16,7 @@ const darkColors: DefaultTheme['colors'] = {
   background: '#20262D',
   gray2: '#A6ABBD',
   text: '#ffffff',
-  emphasize: '#0275d8',
+  emphasize: '#00CBFC',
 }
 const lightColors: DefaultTheme['colors'] = {
   primary: '#118bff',
