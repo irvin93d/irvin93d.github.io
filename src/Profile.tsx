@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ComponentProps, PropsWithChildren } from 'react'
 import styled from 'styled-components/macro'
 
+import { FadeInImg } from './components/FadeIn'
 import { HStack, VStack } from './components/Stack'
 import beutiface from './res/beutiface.jpg'
 
@@ -79,7 +80,7 @@ const LabeledIcon = styled(
   white-space: nowrap;
 `
 
-const Photo = styled.img.attrs(() => ({ src: beutiface, alt: 'Photo of me' }))`
+const Photo = styled(FadeInImg).attrs(() => ({ src: beutiface, alt: 'Photo of me' }))`
   width: 300px;
 `
 

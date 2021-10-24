@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled, { createGlobalStyle, DefaultTheme, ThemeProvider } from 'styled-components/macro'
 
+import { FadeIn } from './components/FadeIn'
 import { HStack, VStack } from './components/Stack'
 import Toggle from './components/Toggle'
 import useThemeDetector from './hooks/useThemeDetectors'
@@ -40,14 +41,16 @@ const App = () => {
     <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Styles>
-        <VStack gap="large" justifyContent="flex-start">
-          <ToggleWrapper>
-            <p>{useDarkTheme ? 'Too dark? ✨' : 'Too bright?💡'}</p>
-            <Toggle value={useDarkTheme} onChange={setDarkTheme} />
-          </ToggleWrapper>
-          <Profile />
-          <Projects />
-        </VStack>
+        <FadeIn>
+          <VStack gap="large" justifyContent="flex-start">
+            <ToggleWrapper>
+              <p>{useDarkTheme ? 'Too dark? ✨' : 'Too bright?💡'}</p>
+              <Toggle value={useDarkTheme} onChange={setDarkTheme} />
+            </ToggleWrapper>
+            <Profile />
+            <Projects />
+          </VStack>
+        </FadeIn>
       </Styles>
     </ThemeProvider>
   )
