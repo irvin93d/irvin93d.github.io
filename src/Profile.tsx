@@ -14,7 +14,7 @@ import beutiface from './res/beutiface.jpg'
 
 const Profile = () => {
   return (
-    <HStack flexWrap="wrap" justifyContent="center">
+    <Wrapper>
       <Photo />
       <div>
         <h1>{title}</h1>
@@ -48,9 +48,23 @@ const Profile = () => {
           </HStack>
         </VStack>
       </div>
-    </HStack>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled(HStack).attrs(() => ({ flexWrap: 'wrap', justifyContent: 'center' }))`
+  a {
+    transition: color 250ms ease;
+    svg {
+      transition: transform 250ms ease;
+    }
+    &:hover {
+      svg {
+        transform: translateY(-8px);
+      }
+    }
+  }
+`
 
 const LabeledIcon = styled(
   ({ children, className, ...props }: PropsWithChildren<ComponentProps<typeof Icon>>) => (
