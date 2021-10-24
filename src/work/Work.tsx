@@ -32,7 +32,8 @@ const Work = () => (
         <li>Bridging of native components from iOS (Swift/ObjC),</li>
         <li>State management with Redux,</li>
         <li>Push notifications with Firebase,</li>
-        <li>e2e testing with Detox.</li>
+        <li>e2e testing with Detox,</li>
+        <li>Brag rights as a main contributor with a solid 30.2% of the case base's commits.</li>
       </ul>
       <HStack flexWrap="wrap" justifyContent="center">
         <FadeInImg alt="Dify" src={Dify1} />
