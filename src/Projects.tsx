@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro'
 
+import { FadeInImg } from './components/FadeIn'
 import { HStack, VStack } from './components/Stack'
 
 const Projects = () => (
@@ -17,7 +18,7 @@ const Projects = () => (
           <li>Frontend in React.js and Bootstrap 4.</li>
         </ul>
         <a href="https://github.com/irvin93d/minesweeper-api-go">
-          <img
+          <FadeInImg
             alt="Minesweeper"
             src="https://raw.githubusercontent.com/irvin93d/minesweeper-api-go/master/preview.png"
           />
@@ -37,7 +38,7 @@ const Projects = () => (
           </li>
         </ul>
         <a href="https://github.com/irvin93d/BirdHaressment">
-          <img
+          <FadeInImg
             alt="Bird Harassment"
             src="https://raw.githubusercontent.com/irvin93d/BirdHaressment/master/web/res/screen2.png"
           />
