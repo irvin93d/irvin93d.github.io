@@ -9,13 +9,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ComponentProps, PropsWithChildren } from 'react'
 import styled from 'styled-components/macro'
 
+import Envelope from './components/Envelope'
 import { HStack, VStack } from './components/Stack'
 import beutiface from './res/beutiface.jpg'
 
 const Profile = () => {
   return (
-    <HStack flexWrap="wrap" justifyContent="center">
-      <Photo />
+    <HStack flexWrap="wrap" justifyContent="flex-start">
+      <VStack alignItems="flex-start">
+        <Envelope />
+        <Photo />
+      </VStack>
       <div>
         <h1>{title}</h1>
         <h2>{subtitle}</h2>

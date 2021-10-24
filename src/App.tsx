@@ -9,7 +9,7 @@ import Projects from './Projects'
 
 const fonts: DefaultTheme['fonts'] = { primary: 'Courier New, Courier, monospace' }
 
-const gaps: DefaultTheme['gaps'] = { none: 0, nano: 4, small: 8, medium: 16, large: 32, huge: 64 }
+const gaps: DefaultTheme['gaps'] = { none: 0, nano: 4, small: 8, medium: 0, large: 0, huge: 0 }
 const darkColors: DefaultTheme['colors'] = {
   primary: '#00B2FF',
   gray1: '#414656',
@@ -40,11 +40,7 @@ const App = () => {
     <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Styles>
-        <VStack gap="large" justifyContent="flex-start">
-          <ToggleWrapper>
-            <p>{useDarkTheme ? 'Too dark? ✨' : 'Too bright?💡'}</p>
-            <Toggle value={useDarkTheme} onChange={setDarkTheme} />
-          </ToggleWrapper>
+        <VStack alignItems="flex-start" gap="large" justifyContent="flex-start">
           <Profile />
           <Projects />
         </VStack>
