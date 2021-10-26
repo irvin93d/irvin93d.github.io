@@ -45,7 +45,7 @@ const App = () => {
         <FadeIn>
           <VStack gap="large" justifyContent="flex-start">
             <ToggleWrapper>
-              <p>{useDarkTheme ? 'Too dark? ✨' : 'Too bright?💡'}</p>
+              <p>{useDarkTheme ? '✨' : '💡'}</p>
               <Toggle value={useDarkTheme} onChange={setDarkTheme} />
             </ToggleWrapper>
             <Profile />
@@ -132,6 +132,7 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const Styles = styled.div`
+  position: relative;
   flex: 1;
   padding: ${({ theme: { gaps } }) => gaps.large}px;
 `
