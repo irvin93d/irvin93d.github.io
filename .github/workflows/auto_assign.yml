@@ -1,0 +1,23 @@
+name: 'Auto Assign'
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  add-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.2.1
+        with:
+          addAssignees: author
+ 
+          addReviewers: true
+
+          reviewers:
+            - irvin93d
+
+          numberOfReviewers: 0
+
+          filterLabels:
+            exclude:
+              - wip
