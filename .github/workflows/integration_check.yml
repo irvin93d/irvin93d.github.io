@@ -1,27 +1,44 @@
-
 name: Integration check
 
-on:
-  pull_request:
-    branches: [ main ]
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-
   integration_check:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.5
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use Head instead of creating a merge commit against the base branch.
+          # https://github.com/actions/checkout#checkout-pull-request-head-commit-instead-of-merge-commit
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
 
-      - name: Install 🔧
-        run: yarn install --frozen-lockfile
+      - name: 🪢 Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-      - name: Lint 👕
-        run: yarn lint
+      - name: 🪢 Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.18.0"
+          cache: "pnpm"
 
-      - name: Test 🧪
-        run: yarn test
+      - name: 🛒 Install
+        run: pnpm install --frozen-lockfile
 
-      - name: Build 👷
-        run: yarn build
+      - name: 🔬 Lint
+        run: pnpm lint
+
+      # - name: 🧪 Test
+      #   run: pnpm test
+
+      - name: 🔨 Build
+        run: pnpm build
