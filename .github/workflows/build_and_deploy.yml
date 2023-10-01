@@ -4,8 +4,20 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -36,8 +48,11 @@ jobs:
       - name: 🔨 Build
         run: pnpm build
 
-      - name: 🚀 Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: ⤴️ Upload artifacts
+        uses: actions/upload-pages-artifact@v2
         with:
-          branch: gh-pages
-          folder: build
+          path: "./build"
+
+      - name: 🚀 Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
