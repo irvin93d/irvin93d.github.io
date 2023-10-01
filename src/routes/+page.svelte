@@ -7,7 +7,9 @@
   // TODO Need to optimize these
   import me from "$lib/images/beutiface.jpg"
   import dify from "$lib/images/opera/dify.png"
-  import gxgames from "$lib/images/opera/gxgames.png"
+  import gxcornermobile from "$lib/images/opera/gxcorner-mobile.mp4"
+  import gxgames from "$lib/images/opera/gxgames.mp4"
+  import gxstore from "$lib/images/opera/gxstore.mp4"
   import opay from "$lib/images/opera/opay.jpg"
   import pocopay from "$lib/images/opera/pocopay.jpg"
 </script>
@@ -77,22 +79,90 @@
     TODO GX Mobile
     TODO GX Corner
     TODO GX Store
-
+    TODO Game Wrapper
    -->
-  <div class="flex grid-cols-5 flex-col gap-2 lg:grid lg:gap-4">
-    <div class="col-span-3">
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>React/Next.js Web Developer</span>
+      <span class="text-base text-gray-200">At GX.V by Opera Software</span>
+    </h3>
+    <p><i>Yet to be released.</i></p>
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>React/Next.js Web Developer</span>
+      <span class="text-base text-gray-200">At GX.Dev by Opera Software</span>
+    </h3>
+    <p><i>Yet to be released.</i></p>
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex grid-cols-5 flex-col-reverse gap-2 lg:grid lg:gap-4">
+    <!-- svelte-ignore a11y-media-has-caption -->
+    <video class="col-span-1 w-full max-w-md self-center" autoplay controls src={gxcornermobile} />
+    <div class="col-span-4">
       <h3 class="flex flex-col">
-        <span>React/Next.js Web Developer</span>
-        <span class="text-base text-gray-200">At GX.Games by Opera Software</span>
+        <span>SvelteKit Web Developer</span>
+        <span class="text-base text-gray-200">At GX Corner by Opera Software</span>
       </h3>
-      <p>A platform for fast and free publishing of games made in GameMaker Studio.</p>
+      <p>Opera GX exclusive news feed for gamers.</p>
       <ul>
-        <li>Dynamic/static web pages with next.js/CRA,</li>
-        <li>Async data management with react-query,</li>
-        <li>Styling with styled-components and SASS.</li>
+        <li>Made a complete revamp of GX Corner for Mobile,</li>
+        <li>Migrated codebase to SvelteKit with full typescript support,</li>
+        <li>
+          Optimized transitions and scroll animations to super sleek even on slow mobile devices.
+        </li>
       </ul>
     </div>
-    <Image class="col-span-2 max-w-md self-center" alt="GXC" src={gxgames} />
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>React/Next.js Web Developer</span>
+      <span class="text-base text-gray-200">At GX.Store by Opera Software</span>
+    </h3>
+    <p>Opera GX exclusive mods downloader platform.</p>
+    <!-- svelte-ignore a11y-media-has-caption -->
+    <video class="w-full self-center" autoplay controls src={gxstore} />
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>SvelteApp Web Developer</span>
+      <span class="text-base text-gray-200">At GX.Corner Desktop by Opera Software</span>
+    </h3>
+    <p><i>Unwritten section. Check back later!</i></p>
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>SvelteApp Web Developer</span>
+      <span class="text-base text-gray-200">At GX.Games by Opera Software</span>
+    </h3>
+    <p>Rewrite of legacy game-wrapper for GX.Games</p>
+  </div>
+
+  <hr class="border-gray-600 opacity-50" />
+
+  <div class="flex flex-col gap-4">
+    <h3 class="flex flex-col">
+      <span>React/Next.js Web Developer</span>
+      <span class="text-base text-gray-200">At GX.Games by Opera Software</span>
+    </h3>
+    <p>A platform for fast and free publishing of games made in GameMaker Studio.</p>
+    <!-- svelte-ignore a11y-media-has-caption -->
+    <video class="w-full self-center" autoplay controls src={gxgames} />
   </div>
 
   <hr class="border-gray-600 opacity-50" />
